@@ -1,6 +1,7 @@
 package com.study.coolweather.activity;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
@@ -123,5 +124,11 @@ public class WeatherActivity extends Activity {
 
         weatherInfoLayout.setVisibility(View.VISIBLE);
         cityNameText.setVisibility(View.VISIBLE);
+    }
+
+    @Override
+    public void onBackPressed() {
+        Intent intent = new Intent(WeatherActivity.this, ChooseAreaActivity.class);
+        startActivity(intent);
     }
 }
