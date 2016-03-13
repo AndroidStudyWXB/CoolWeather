@@ -13,6 +13,7 @@ import android.widget.TextView;
 import android.view.View.OnClickListener;
 
 import com.study.coolweather.R;
+import com.study.coolweather.service.AutoUpdateService;
 import com.study.coolweather.util.HttpCallbackListener;
 import com.study.coolweather.util.HttpUtil;
 import com.study.coolweather.util.Utility;
@@ -156,6 +157,9 @@ public class WeatherActivity extends Activity implements OnClickListener{
 
         weatherInfoLayout.setVisibility(View.VISIBLE);
         cityNameText.setVisibility(View.VISIBLE);
+
+        Intent intent = new Intent(this, AutoUpdateService.class);
+        startService(intent);
     }
 
     @Override
